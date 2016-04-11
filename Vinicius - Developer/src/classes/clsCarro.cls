@@ -17,8 +17,8 @@ public class clsCarro {
         car.Cor__c = car.Cor__c;
         car.Daltonico__c = car.Daltonico__c;
         car.Placa__c = car.Placa__c;
-        
-        update car;   
+        sdadsada
+        update car;   aaaaaaa
         return null;
     } */
     
