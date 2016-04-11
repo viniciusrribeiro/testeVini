@@ -22,4 +22,16 @@ public class clsDisparosEmail {
             }
         }		
 	}
+	
+	public static void disparaEmailAreaAcionadaCaso (List<Area_Responsavel__c> aResp, Case casenumber){
+
+        for(Area_responsavel__c resp : aResp){
+       		if(resp.Area_responsa__c != null){
+            	String email = String.valueof(resp.Email_Area__c);
+                String corpoEmail = String.valueOf(resp.Corpo_Email__c);
+                String assunto = 'Você tem um caso escalonado,  nº ' + String.valueof(casenumber);
+                clsEnviaEmail.enviaEmail(email,assunto, corpoEmail);
+            }
+        }		
+	}	
 }
