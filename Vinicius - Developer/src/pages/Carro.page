@@ -1,0 +1,31 @@
+<apex:page standardController="Carro__c">
+
+    <apex:form >
+
+        <apex:pageBlock title="Edit Account for {!$User.FirstName}">
+
+            <apex:pageMessages />
+
+            <apex:pageBlockButtons >
+
+                <apex:commandButton value="Save" action="{!save}"/>
+                <apex:commandButton value="Cancelar" action="{!cancel}"/>
+                <apex:commandButton value="Excluir" action="{!delete}"/>
+                
+                
+            </apex:pageBlockButtons>
+
+            <apex:pageBlockSection >
+
+                <apex:inputField value="{!Carro__c.name}"/>
+                <apex:inputField value="{!Carro__c.Placa__c}"/>
+                <apex:inputField value="{!Carro__c.Cor__c}"/>
+                <apex:inputField value="{!Carro__c.Daltonico__c}"/>
+
+            </apex:pageBlockSection>
+
+        </apex:pageBlock>
+
+    </apex:form>
+     	
+</apex:page>

@@ -1,0 +1,16 @@
+<apex:page sidebar="false">
+    
+    <apex:pageBlock title="User Status">
+        
+        <apex:pageBlockSection columns="1" title="Quem está acessando?" >
+            
+           <p> <b> Nome: </b>{! $User.FirstName } {! $User.LastName}</p>  
+           <p> <b> Usuário: </b>{! $User.Username} </p>
+           <p> <b> Data: </b>{! DAY(Today())} /  {!MONTH(Today())} / {!YEAR(Today())} </p> 
+
+            
+        </apex:pageBlockSection>
+        
+    </apex:pageBlock>
+    
+</apex:page>

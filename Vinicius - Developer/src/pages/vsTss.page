@@ -1,0 +1,19 @@
+<apex:page standardController="Product__c">
+    <head>
+        <apex:pageBlock title="Produtos">
+			<apex:pageBlockSection >
+                <apex:outputLabel value="Nome: "/>s
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    </head>
+    <body>
+       <apex:pageblock >
+        <b>Aqui demonstro meu body</b>
+       </apex:pageblock>
+    </body>
+    <foot>
+       <apex:pageblock >
+      	<b>Segue meu footer</b>
+       </apex:pageblock>
+    </foot>
+</apex:page>

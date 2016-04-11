@@ -1,0 +1,27 @@
+<apex:page sidebar="false" controller="csProductController" >
+	 <apex:form title="Produtos">
+         <body>
+             <apex:pageBlock title="Tela de Produtos">
+                 <apex:pageBlockSection >
+                     <apex:pageBlockSectionItem >
+                        <apex:outputLabel value="Nome do Produto: "/>
+                            <apex:selectList id="idListProdName" value="{!lstProducts}" required="true" title="Produtos"> 
+                                <apex:selectOptions value="{!lstProducts}" >
+                                </apex:selectOptions>
+                            </apex:selectList> 
+                     </apex:pageBlockSectionItem>
+                     <apex:pageBlockSectionItem >
+                        <apex:outputLabel value="Tipo do Produto: "/>
+                            <apex:selectList id="idListProdType" value="{!lstTypeProducts}" required="true" title="Produtos"> 
+                                <apex:selectOptions value="{!lstTypeProducts}" >
+                                </apex:selectOptions>
+                            </apex:selectList>
+                     </apex:pageBlockSectionItem>
+                 </apex:pageBlockSection>
+          		 	<apex:pageBlockButtons > 
+              			<apex:commandButton value="AtualizaProduto" action="{!atualizaProduto}" />
+             		</apex:pageBlockButtons>
+             </apex:pageBlock>
+		</body>
+     </apex:form>
+</apex:page>
