@@ -57,8 +57,10 @@ public class clsValidacoes {
 
         for(Case cs : lstCasos){
         	
-        	//Retorna o próximo dia util à partir do prazo estabelecido no caso            
-            cs.data_encerramento__c = ClsBusinessHours.retornaProximoDiaUtil(cs.prazo__c); 
+        	if(cs.prazo__c != null){       	
+	        	//Retorna o próximo dia util à partir do prazo estabelecido no caso            
+	            cs.data_encerramento__c = ClsBusinessHours.retornaProximoDiaUtil(cs.prazo__c);
+        	} 
                 
         }
     }

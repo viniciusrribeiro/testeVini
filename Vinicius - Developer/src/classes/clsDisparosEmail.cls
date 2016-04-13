@@ -1,6 +1,5 @@
 public class clsDisparosEmail {
 
-
 	public static void disparaEmailAreaAcionada (String id){
 
  		List <Pedido_compra__c> p = [SELECT AREA_EMAIL__c FROM PEDIDO_COMPRA__C WHERE CODIGO_PEDIDO__C =: id];      
@@ -29,7 +28,7 @@ public class clsDisparosEmail {
        		if(resp.Area_responsa__c != null){
             	String email = String.valueof(resp.Email_Area__c);
                 String corpoEmail = String.valueOf(resp.Corpo_Email__c);
-                String assunto = 'Você tem um caso escalonado,  nº ' + String.valueof(casenumber);
+                String assunto = 'Você tem um caso escalonado,  nº ' + String.valueof(casenumber.CaseNumber);
                 clsEnviaEmail.enviaEmail(email,assunto, corpoEmail);
             }
         }		

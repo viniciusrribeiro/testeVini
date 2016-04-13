@@ -16,14 +16,14 @@ public with sharing class clsEscalonaCasos {
 		for(Case c : lstCasos){			
 			if(c.escalonar__c == true && c.status != 'Fechado'){
 				if(c.escalonar_para__c != null){
-					Area_Responsavel__c [] ar = [SELECT ID, Area_responsa__c FROM Area_Responsavel__c WHERE ID =: c.escalonar_para__c LIMIT 1];
-					String arp = ar[0].Area_responsa__c;
+					List<Area_Responsavel__c> ar = new List<Area_Responsavel__C>([SELECT ID, Area_responsa__c,Corpo_Email__c, Email_Area__c FROM Area_Responsavel__c WHERE ID =: c.escalonar_para__c LIMIT 1]);
+					String arp = String.ValueOf(ar[0].area_responsa__c);
 					
 					Group [] fila = [SELECT ID FROM GROUP WHERE NAME =: arp LIMIT 1];
 					
 					c.ownerId = fila[0].id;
 					
-					clsDisparosEmail.disparaEmailAreaAcionadaCaso(ar, c.casenumber);		
+					clsDisparosEmail.disparaEmailAreaAcionadaCaso(ar , c);		
 				}
 			}
 		}
